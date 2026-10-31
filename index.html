@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ကိုရေ ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ffe0ec, #fff0f5);
+    color: #d6336c;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.heart {
+    font-size: 75px;
+    animation: beat 1s infinite;
+}
+
+h1 {
+    font-size: 38px;
+    color: #e91e63;
+}
+
+.message {
+    font-size: 20px;
+    line-height: 2;
+    color: #8e3154;
+}
+
+button {
+    background: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+#surprise {
+    display: none;
+    margin-top: 30px;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #e91e63;
+}
+
+.flowers {
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+@keyframes beat {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.floating {
+    position: fixed;
+    bottom: -30px;
+    animation: floatUp 5s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="heart">💗</div>
+
+    <h1>ကိုရေ ❤️</h1>
+
+    <div class="message">
+        ချစ်တုံးလွမ်းနေပြီနော် 🥺💕<br>
+        ကိုနဲ့ စကားပြောချင်နေပြီ။<br>
+        ကို့ကိုလည်း တွေ့ချင်နေပြီ 🥹💗<br>
+        အခုလိုင်းတက်လာရင် ကောင်းမယ်နော်။<br><br>
+        ကိုရေ...<br>
+        ချစ်တုံးက ဒီမှာစောင့်နေတယ်နော် 🌷<br>
+        မြန်မြန်လိုင်းတက်လာခဲ့ပါနော် ❤️
+    </div>
+
+    <button id="surpriseBtn" type="button">
+        နှိပ်ကြည့်ပါ 💌
+    </button>
+
+    <div id="surprise">
+        💌 Surprise! 💌<br>
+        ကိုရေ... ချစ်တုံးကို သတိရပေးနော်။ ❤️<br>
+        🌷 ချစ်တုံးရဲ့ အလွမ်းလက်ဆောင်လေး 🌷
+    </div>
+
+    <div class="flowers">
+        🌷 🌸 💗 🌸 🌷
+    </div>
+
+</div>
+
+<script>
+document.getElementById("surpriseBtn").addEventListener("click", function() {
+    document.getElementById("surprise").style.display = "block";
+    this.textContent = "နှိပ်ပြီးပါပြီ 💗";
+});
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating";
+    heart.textContent = Math.random() > 0.5 ? "💗" : "🌸";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 700);
+</script>
+
+</body>
+</html>
